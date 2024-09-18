@@ -1,0 +1,39 @@
+import java.io.*;
+class Createfile{
+
+    public static void main(String[]args){
+        File f = new File("D:\\22UAI020\\ABC.txt");
+
+        try{
+            if(f.createNewFile())
+            {
+                System.out.println("Successfully file is created");
+            }
+            else{
+                System.out.println("File is already exists");
+            }
+            if(f.delete())
+            {
+                System.out.println("Deleted Succesfully");
+            }
+            else
+            {
+                System.out.println("File cannot be deleted");
+            }
+             FileWriter w = new FileWriter("D:\\22UAI020\\ABC.txt");
+             w.write("hello Jaydeep Bansode");
+             w.close();
+             System.out.println("Write successfully");
+
+             FileReader r = new FileReader("D:\\22UAI020\\ABC.txt");
+             r.read();
+             r.close();
+             System.out.println("Successfully read");
+        }
+        catch(IOException i)
+        {
+            System.out.println("Exception is handled");
+        }
+        
+    }
+}
